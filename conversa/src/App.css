@@ -1,0 +1,17 @@
+*{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+.dark3{
+    background-color: #2b2e30 !important;
+}
+
+.App{
+  background-color: #dddedd;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
