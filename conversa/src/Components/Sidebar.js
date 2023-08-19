@@ -13,7 +13,6 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleTheme } from '../Features/themeSlice';
 import axios from "axios";
-import { refreshSidebarFun } from "../Features/refreshSidebar";
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import { myContext } from "./MainContainer";
@@ -57,26 +56,12 @@ function Sidebar() {
         // dispatch(refreshSidebarFun(refresh));
         // setRefresh(!refresh);
         });
-    },[refresh, refreshToggle]);
+    },[refreshToggle]);
 
     useEffect(() => {
         // Trigger the refresh by toggling refreshToggle
         setRefreshToggle(true);
     }, [refresh]);
-
-    // const initialRender = useRef(true);
-
-
-    // useEffect(() => {
-    //     if (initialRender.current) {
-    //         initialRender.current = false;
-    //         return;
-    //     }
-    
-    //     console.log("Second useEffect triggered with refresh:", refresh);
-    
-    //     // Your logic here
-    // }, [refresh]);
     
 
 

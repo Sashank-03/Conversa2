@@ -8,7 +8,6 @@ import { useDispatch} from "react-redux";
 import {motion } from "framer-motion";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { refreshSidebarFun } from "../Features/refreshSidebar";
 import { myContext } from "./MainContainer";
 import { API_URL } from './config';
 
@@ -62,9 +61,7 @@ function Users() {
           <IconButton
             className={"icon" + (lightTheme ? "" : " dark")}
             onClick={() => {
-              // setRefresh(!refresh);
-              dispatch(refreshSidebarFun(refresh));
-
+              setRefresh(!refresh);
             }}
           >
             <RefreshOutlinedIcon />
@@ -104,7 +101,6 @@ function Users() {
                     config
                   );
                   setRefresh(!refresh);
-                  // dispatch(refreshSidebarFun(refresh));
                 }}
               >
                 <p className={"con-icon" + (lightTheme ? "" : " dark5")}>T</p>

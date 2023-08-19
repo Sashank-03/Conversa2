@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 import RefreshOutlinedIcon from '@mui/icons-material/RefreshOutlined';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { refreshSidebarFun } from "../Features/refreshSidebar";
 import { myContext } from "./MainContainer";
 import { API_URL } from './config';
 
@@ -62,9 +61,7 @@ function Groups() {
               <IconButton
                 className={"icon" + (lightTheme ? "" : " dark")}
                 onClick={() => {
-                  // setRefresh(!refresh);
-                  dispatch(refreshSidebarFun(refresh));
-
+                  setRefresh(!refresh);
                 }}
               >
                 <RefreshOutlinedIcon />
@@ -106,7 +103,6 @@ function Groups() {
                     config
                   );
                   setRefresh(!refresh);
-                  // dispatch(refreshSidebarFun(refresh));
                 }}
               >
                 <p className={"con-icon" + (lightTheme ? "" : " dark5")}>T</p>
