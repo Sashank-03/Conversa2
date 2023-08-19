@@ -44,36 +44,36 @@ app.use(errorHandler);
 const PORT = process.env.PORT || 8080;
 const server= app.listen(PORT, console.log("Server is Running..."));
 
-const io = require("socket.io") (server,{
-  cors: {
-    origin: "*",
-  },
-  pingTimeout: 60000,
-});
+// const io = require("socket.io") (server,{
+//   cors: {
+//     origin: "*",
+//   },
+//   pingTimeout: 60000,
+// });
 
-io.on("connection", (socket) => {
-console.log("socket.io Connection established");
-  socket.on("setup", (user) => {
-    socket.join(user.data._id);
-    // console.log("server :// joined user:", user.data._id);
-    socket.emit ("connected");
-  });
+// io.on("connection", (socket) => {
+// console.log("socket.io Connection established");
+//   socket.on("setup", (user) => {
+//     socket.join(user.data._id);
+//     // console.log("server :// joined user:", user.data._id);
+//     socket.emit ("connected");
+//   });
 
-  socket.on("join chat", (room) => {
-    socket.join(room); 
-    console.log("User joined Room: ", room);
-  });
+//   socket.on("join chat", (room) => {
+//     socket.join(room); 
+//     console.log("User joined Room: ", room);
+//   });
 
-  socket.on("new message", (newMessageStatus) => {
-    var chat =newMessageStatus.chat;
-    // console.log("new message socket");
-    if (!chat.users) {
-      return console.log("chat.users not defined");
-    }
-    chat.users.forEach((user) => {
-      if (user._id == newMessageStatus.sender._id) return;
-        socket.in(user._id).emit ("message recieved", newMessageStatus);
-    });
-  });
+//   socket.on("new message", (newMessageStatus) => {
+//     var chat =newMessageStatus.chat;
+//     // console.log("new message socket");
+//     if (!chat.users) {
+//       return console.log("chat.users not defined");
+//     }
+//     chat.users.forEach((user) => {
+//       if (user._id == newMessageStatus.sender._id) return;
+//         socket.in(user._id).emit ("message recieved", newMessageStatus);
+//     });
+//   });
     
-});
+// });
