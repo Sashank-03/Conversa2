@@ -601,7 +601,7 @@
     gap: 0.625rem;
     /* margin: 0.625rem; */
     padding: 0.625rem;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .usersonline-header{
@@ -654,7 +654,7 @@
     background-color: #fbfbfd;
     border-radius: 1.25rem;
     padding: 0.625rem 0.938rem;
-    margin: 0.313rem;
+    margin: 0.04rem;
     align-items: center;
     transition-duration: 0.5s;
     font-family: 'Poppins', sans-serif;

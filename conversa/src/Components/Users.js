@@ -82,10 +82,9 @@ function Users() {
         <div className="uo-list">
           {users.map((user, index) => {
             return (
-              // <motion.div
-              <div
-                // whileHover={{ scale: 1.01 }}
-                // whileTap={{ scale: 0.98 }}
+              <motion.div
+                whileHover={{ scale: 1.01 }}
+                whileTap={{ scale: 0.98 }}
                 className={"uo-listitem" + (lightTheme ? "" : " dark")}
                 key={index}
                 onClick={() => {
@@ -109,8 +108,7 @@ function Users() {
                 <p className={"con-title" + (lightTheme ? "" : " dark")}>
                   {user.name}
                 </p>
-              {/* </motion.div> */}
-              </div>
+              </motion.div>
             );
           })}
         </div>
