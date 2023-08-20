@@ -4,7 +4,7 @@ import { IconButton } from '@mui/material'
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import RefreshOutlinedIcon from '@mui/icons-material/RefreshOutlined';
 import { useSelector } from 'react-redux';
-import { useDispatch} from "react-redux";
+// import { useDispatch} from "react-redux";
 import {motion } from "framer-motion";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -22,7 +22,7 @@ function Users() {
   const userData = JSON.parse(localStorage.getItem("userData"));
   // console.log("Data from LocalStorage : ", userData);
   const nav = useNavigate();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   if (!userData) {
     console.log("User not Authenticated");
@@ -41,8 +41,9 @@ function Users() {
       setUsers(data.data);
       // setRefresh(!refresh);
       // dispatch(refreshSidebarFun());
+      // console.log(users);
     });
-  }, [refresh]);
+  }, [refresh, userData.data.token]);
 
 
   return (
@@ -103,7 +104,7 @@ function Users() {
                   setRefresh(!refresh);
                 }}
               >
-                <p className={"con-icon" + (lightTheme ? "" : " dark5")}>T</p>
+                <p className={"con-icon" + (lightTheme ? "" : " dark5")}>{user.name[0]}</p>
                 <p className={"con-title" + (lightTheme ? "" : " dark")}>
                   {user.name}
                 </p>

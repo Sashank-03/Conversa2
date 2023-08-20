@@ -38,7 +38,7 @@ function Sidebar() {
         console.log("User not Authenticated");
         nav("/");
     }
-
+    
     const [refreshToggle, setRefreshToggle] = useState(false);
     const user = userData.data;
     useEffect(() => {
@@ -56,7 +56,7 @@ function Sidebar() {
         // dispatch(refreshSidebarFun(refresh));
         // setRefresh(!refresh);
         });
-    },[refreshToggle]);
+    },[refreshToggle, user.token]);
 
     useEffect(() => {
         // Trigger the refresh by toggling refreshToggle

@@ -1,9 +1,9 @@
 import React from "react";
 import "./allStyles.css";
-import { useDispatch, useSelector } from "react-redux";
+import {useSelector } from "react-redux";
 
 function MessagesOthers({ props }) {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const lightTheme = useSelector((state) => state.themeKey);
   // console.log("message others : ", props);
   return (

@@ -2,8 +2,8 @@ import React, { useContext, useEffect } from 'react'
 import './allStyles.css'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { toggleTheme } from '../Features/themeSlice';
+import { useSelector } from 'react-redux';
+// import { toggleTheme } from '../Features/themeSlice';
 import axios from "axios";
 import { myContext } from "./MainContainer";
 import { API_URL } from './config';
@@ -12,7 +12,7 @@ import { API_URL } from './config';
 function Chats() {
 
     const navigate = useNavigate();
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const lightTheme = useSelector((state) => state.themeKey);
     // const refresh = useSelector((state) => state.refreshKey);
     const { refresh, setRefresh } = useContext(myContext);
@@ -41,7 +41,7 @@ function Chats() {
         setConversations(response.data);
         // setRefresh(!refresh);
         });
-    }, [refresh]);
+    }, [refresh, user.token]);
 
 
   return (

@@ -5,7 +5,7 @@ import SendIcon from '@mui/icons-material/Send';
 import MessagesOthers from './MessagesOthers';
 import MessagesSelf from './MessagesSelf';
 import { useSelector } from 'react-redux';
-// import { useDispatch} from "react-redux";
+// import { useDispatch} from "react-redux"
 import { useParams } from "react-router-dom";
 import Skeleton from "@mui/material/Skeleton";
 import axios from "axios";
@@ -102,7 +102,7 @@ function ChatArea() {
       });
       setAllMessagesCopy(allMessages);
     // scrollToBottom();
-  }, [refresh, chat_id]);
+  }, [refresh, chat_id, allMessages, userData.data.token]);
 
 //   console.log(chat_user);
 
@@ -117,7 +117,7 @@ function ChatArea() {
           display: "flex",
           flexDirection: "column",
           gap: "0.625rem",
-          // flex: 0.7
+          flex: 1
         }}
       >
         <Skeleton
