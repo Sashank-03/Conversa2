@@ -109,16 +109,16 @@ function ChatArea() {
 
   if (!loaded) {
     return (
-      <div
-        style={{
-        //   border: "20px",
-          padding: "0.625rem",
-          width: "100%",
-          display: "flex",
-          flexDirection: "column",
-          gap: "0.625rem",
-          flex: 1
-        }}
+      <div className='loading'
+        // style={{
+        //   // border: "20px",
+        //   padding: "0.625rem",
+        //   width: "100%",
+        //   display: "flex",
+        //   flexDirection: "column",
+        //   gap: "0.625rem",
+        //   flex: 0.7
+        // }}
       >
         <Skeleton
           variant="rectangular"
