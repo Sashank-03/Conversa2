@@ -16,7 +16,7 @@ function Groups() {
   const { refresh, setRefresh } = useContext(myContext);
 
   const lightTheme = useSelector((state) => state.themeKey);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const [groups, SetGroups] = useState([]);
   const userData = JSON.parse(localStorage.getItem("userData"));
   // console.log("Data from LocalStorage : ", userData);

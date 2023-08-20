@@ -1,29 +1,29 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import {IconButton} from "@mui/material"
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import SendIcon from '@mui/icons-material/Send';
 import MessagesOthers from './MessagesOthers';
 import MessagesSelf from './MessagesSelf';
 import { useSelector } from 'react-redux';
-import { useDispatch} from "react-redux";
+// import { useDispatch} from "react-redux";
 import { useParams } from "react-router-dom";
 import Skeleton from "@mui/material/Skeleton";
 import axios from "axios";
 import { myContext } from "./MainContainer";
-import { io } from "socket.io-client";
+// import { io } from "socket.io-client";
 import { API_URL } from './config';
 
 
 
-const ENDPOINT= `${API_URL}`;
-var socket, chat;
+// const ENDPOINT= `${API_URL}`;
+// var socket, chat;
 
 function ChatArea() {
 
 
   const lightTheme = useSelector((state) => state.themeKey);
   const [messageContent, setMessageContent] = useState("");
-  const messagesEndRef = useRef(null);
+  // const messagesEndRef = useRef(null);
   const dyParams = useParams();
   const [chat_id, chat_user] = dyParams._id.split("&");
   // console.log(chat_id, chat_user);
